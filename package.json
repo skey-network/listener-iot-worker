@@ -25,7 +25,6 @@
     "@types/node-fetch": "^2.5.7",
     "@waves/ts-lib-crypto": "^1.4.3",
     "dotenv": "^8.2.0",
-    "install": "^0.13.0",
     "node-fetch": "^2.6.1",
     "npm": "^7.12.0",
     "rsmq": "^0.12.3",
