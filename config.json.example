@@ -22,7 +22,7 @@
     "jsonByAction": [
       {
         "action": "close",
-        "json": "testdev close json"
+        "json": "{\"payload\":\"testdev close json\"}"
       }
     ]
   }
