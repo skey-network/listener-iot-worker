@@ -1,13 +1,13 @@
-# Listener Iot-Worker
+# Supplier Listener - IoT Worker
 
-Listens for parsed data from blockchain
+Builds requests to IoT server, uses data from queue supplied by `Blockchain Worker` or `Unique Worker` (filters unique data from many `Blockchain Workers`)
 
 # Running from sources
 
 Required packages: `nodejs`, `npm` (prefered instalation via `nvm`)
 
 1. Clone repository
-2. Navigate to supplier-listener-iot-worker folder
+2. Navigate to iot-worker folder
 3. Install dependencies `npm install`
 4. Copy `.env.example` as `.env`, and modify it's contents as in [Configuration file section](#configuration-file).
 5. Copy device config `config.json.example` as `config.json`m and modify it's contents as in [Devices onfiguration file section](#devices-configuration-file).
@@ -57,7 +57,7 @@ docker run -i -v `pwd`/config.json:/app/config.json <place docker envs here> `do
 
 ## IOT
 
-Token for iot
+Token for IoT
 
 ```
 IOT_PLATFORM_TOKEN='abcdef...'
