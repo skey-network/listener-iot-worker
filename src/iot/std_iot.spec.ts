@@ -84,17 +84,22 @@ type ExpectedResult = {
 const cases: [ActionParams, ExpectedResult][] = [
   [
     // no args, should fail, no fallback possible
-    {},
+    {
+      tx: 'txid',
+      timestamp: Date.now()
+    },
     { fail: true }
   ],
   [
     // ok, by device
     {
+      tx: 'txid',
       device: 'device',
       action: 'open',
       deviceModel: 'testDev',
       func: 'func',
-      key: 'key'
+      key: 'key',
+      timestamp: Date.now()
     },
     {
       requestBody:
@@ -106,11 +111,13 @@ const cases: [ActionParams, ExpectedResult][] = [
   [
     // ok by device action
     {
+      tx: 'txid',
       device: 'device',
       action: 'close',
       deviceModel: 'testDev',
       func: 'func',
-      key: 'key'
+      key: 'key',
+      timestamp: Date.now()
     },
     {
       requestBody:
@@ -122,11 +129,13 @@ const cases: [ActionParams, ExpectedResult][] = [
   [
     // fail, with fallback possible
     {
+      tx: 'txid',
       device: 'device',
       action: 'open',
       deviceModel: 'testDevNotListed',
       func: 'func',
-      key: 'key'
+      key: 'key',
+      timestamp: Date.now()
     },
     {
       fail: true,

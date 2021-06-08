@@ -1,17 +1,19 @@
-import { ActionParams } from '../iot/iot'
 import RedisSMQ from 'rsmq'
+import ActionParams from '../action_params'
+
+const queueName = 'uq-txes'
 
 class Consumer {
   rsmq: RedisSMQ
   consumer: (params: ActionParams) => void
 
   constructor(consumer: (params: ActionParams) => void) {
-    this.rsmq = new RedisSMQ({ host: '127.0.0.1', port: 6379, ns: 'all-txes' })
+    this.rsmq = new RedisSMQ({ host: '127.0.0.1', port: 6379, ns: 'listener' })
     this.consumer = consumer
     const that = this
     try {
       // Create queue if not exists, if created successfully or already exists, sets consumer for message
-      this.rsmq.createQueue({ qname: 'all-txes' }, function (err: Error, resp) {
+      this.rsmq.createQueue({ qname: queueName }, function (err: Error, resp) {
         if (err) {
           if (err.message == 'Queue exists') {
             that.setConsumer()
@@ -31,7 +33,7 @@ class Consumer {
 
   /** Sets consumer for next message */
   protected setConsumer() {
-    this.rsmq.popMessage({ qname: 'all-txes' }, (err, resp) =>
+    this.rsmq.popMessage({ qname: queueName }, (err, resp) =>
       this.messageCallback(err, resp)
     )
   }

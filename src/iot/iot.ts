@@ -1,13 +1,6 @@
 import fetch, { Headers } from 'node-fetch'
+import ActionParams from '../action_params'
 import { SpanWrapper } from '../tracing'
-
-type ActionParams = {
-  device?: string
-  action?: string
-  key?: string
-  func?: string
-  deviceModel?: string
-}
 
 type IotMakeActionFnType = (params: ActionParams, span?: SpanWrapper) => void
 
