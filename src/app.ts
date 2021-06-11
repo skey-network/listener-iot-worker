@@ -70,6 +70,9 @@ const iot = new StdIoT({
   fallbackJson: process.env.IOT_FALLBACK_JSON
 })
 
-const consumer = new Consumer((params: ActionParams) => {
-  iot.makeAction(params)
-})
+const consumer = new Consumer(
+  (params: ActionParams) => {
+    iot.makeAction(params)
+  },
+  { exitAfterRedisProblemSec: 60 }
+)

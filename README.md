@@ -40,7 +40,7 @@ docker run -i -v `pwd`/.config.json:/app/config.json <place docker envs here> IM
 
 When config.json file is in another location, provide absolute path to it on left side of "`:`" (instead of `` `pwd`/config.json``, where pwd returns actual working directory, eg `/user/home/xyz/listener/config.json`)
 
-If there is no env specified oracle will stop execution.
+If there is no env specified Iot Worker will stop execution.
 
 ## Build and run
 
@@ -88,6 +88,20 @@ IOT_METHOD='POST'
 - key_id - id of key asset
 - function_name - name of used function
 - device_model - type of device
+
+## Redis
+
+Redis server address
+
+```
+REDIS_HOST="127.0.0.1"
+```
+
+Redis server port
+
+```
+REDIS_PORT="6379"
+```
 
 ## Debug info
 
