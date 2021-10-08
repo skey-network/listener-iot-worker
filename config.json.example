@@ -7,7 +7,7 @@
       "fmb920",
       "fmb900"
     ],
-    "json": "{\"request\": {\"connector\": \"sms\",\"value\": {\"payload\": \"login passwd setdigout 1? 1\",\"type\": \"TEXT\"}},\"policy\": {\"expirationInSeconds\": 120,\"ackMode\": \"NONE\",\"attempts\": 3}}"
+    "json": "{\"request\": {\"connector\": \"sms\",\"value\": {\"payload\": \"login passwd setdigout 1 1\",\"type\": \"TEXT\"}},\"policy\": {\"expirationInSeconds\": 120,\"ackMode\": \"NONE\",\"attempts\": 3}}"
   },
   {
     "supportedActions": [
