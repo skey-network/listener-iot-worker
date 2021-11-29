@@ -10,7 +10,7 @@ Required packages: `nodejs`, `npm` (prefered instalation via `nvm`)
 2. Navigate to iot-worker folder
 3. Install dependencies `npm install`
 4. Copy `.env.example` as `.env`, and modify it's contents as in [Configuration file section](#configuration-file).
-5. Copy device config `config.json.example` as `config.json`m and modify it's contents as in [Devices onfiguration file section](#devices-configuration-file).
+5. Copy device config `config.json.example` as `config.json` and modify it's contents as in [Devices onfiguration file section](#devices-configuration-file).
 6. Run command `npm start`
 
 # Building and running docker image
